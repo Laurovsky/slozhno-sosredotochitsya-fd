@@ -1,5 +1,87 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+:root {
+  --cover-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --text-size: 18px;
+  --main-font: "IBM Plex mono";
+  --border-style: 1px solid var(--accent-color);
+  --header-color: #DB00FF;
+  --header-font-color: #000028;
+}
 
 .page {
+  background-color: #000028;
+  background-image: var(--cover-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: var(--text-size);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  margin-block-start: 10px;
+  padding: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.header::before {
+  justify-self: end;
+  border-inline-end: var(--border-style);
+  border-block-start: var(--border-style);
+}
+
+.header::after {
+  justify-self: start;
+  align-self: end;
+  border-inline-start: var(--border-style);
+  border-block-end: var(--border-style);
+}
+
+.header__top-decoration {
+  position: absolute;
+  right: 30px;
+  justify-self: end;
+  color: var(--accent-color);
+
+  line-height: 25px;
+}
+
+.header__top-decoration::after {
+  content: " . ";
+  position: relative;
+  bottom: 3.25px;
+  left: 10px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 9px 2px var(--accent-color);
+  font-size: 9px;
+  background-color: var(--accent-color);
+}
+
+.header h1 {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  font-weight: bold;
+  color: var(--header-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--header-font-color);
+  font-weight: bold;
+  block-size: fit-content;
+  line-height: 23.4px;
 }
