@@ -5,6 +5,7 @@
 *::after {
   box-sizing: border-box;
   font-family: var(--main-font), sans-serif;
+  font-size: var(--text-font-size);
 }
 
 body {

@@ -1,13 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-:root {
-  --cover-image: url(../images/cover-image-dark.png);
-  --accent-color: #ff0070;
-  --text-size: 18px;
-  --main-font: "IBM Plex mono";
-  --border-style: 1px solid var(--accent-color);
-  --header-color: #DB00FF;
-  --header-font-color: #000028;
-}
 
 .page {
   background-color: #000028;
@@ -15,7 +6,9 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-size: var(--text-size);
+  font-size: var(--text-font-size); 
+  padding: 10px;
+  
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -24,7 +17,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   margin-block-start: 10px;
-  padding: 10px;
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -70,18 +62,35 @@
   background-color: var(--accent-color);
 }
 
-.header h1 {
+.header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   font-weight: bold;
   color: var(--header-color);
   text-shadow: 4px 4px 0 var(--accent-color);
+  max-inline-size: 355px;
+  box-sizing: content-box;
+  padding-right: 10px;
+
+
 }
+
+
 
 .title-decor {
   background-color: var(--accent-color);
   color: var(--header-font-color);
   font-weight: bold;
   block-size: fit-content;
-  line-height: 23.4px;
+  inline-size: 355px;
+  line-height: 100%;
+
+
+  /* padding-right: 10px; */
+}
+
+.section__header {
+  background-color: inherit;
+  color: var(--accent-color);
+  /* font-size: var(--text-font-size); */
 }
