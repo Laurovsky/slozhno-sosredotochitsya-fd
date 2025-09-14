@@ -8,6 +8,7 @@
   background-attachment: fixed;
   font-size: var(--text-font-size); 
   padding: 10px;
+  font-size: var(--text-font-size);
   
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
@@ -16,28 +17,37 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  margin-block-start: 10px;
   block-size: 100vh;
   min-block-size: 668px;
 }
 
+.header__theme-menu {
+  justify-self: end;
+  margin-block-start: 65px;
+}
+
 .header::before,
-.header::after {
+.header::after,
+.footer::before,
+.footer::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
 }
 
-.header::before {
+.header::before,
+.footer::before {
   justify-self: end;
   border-inline-end: var(--border-style);
   border-block-start: var(--border-style);
 }
 
-.header::after {
+.header::after,
+.footer::after {
   justify-self: start;
   align-self: end;
+  bottom: 10px;
   border-inline-start: var(--border-style);
   border-block-end: var(--border-style);
 }
@@ -62,35 +72,153 @@
   background-color: var(--accent-color);
 }
 
-.header__title {
+.header .header__title,
+.footer .footer__title{
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   font-weight: bold;
   color: var(--header-color);
+  max-width: 100%;
   text-shadow: 4px 4px 0 var(--accent-color);
-  max-inline-size: 355px;
-  box-sizing: content-box;
-  padding-right: 10px;
-
-
 }
 
+.text-shadow {
+  text-shadow: 3px 2px 0 var(--accent-color);
+}
 
+.header__paragraph {
+  margin-block-start: 20px;
+}
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--header-font-color);
+  color: var(--title-font-color);
   font-weight: bold;
   block-size: fit-content;
-  inline-size: 355px;
-  line-height: 100%;
+  min-inline-size: 355px;
 
-
-  /* padding-right: 10px; */
 }
 
 .section__header {
   background-color: inherit;
   color: var(--accent-color);
-  /* font-size: var(--text-font-size); */
+  margin-block-start: var(--header-section-top-margin);
+  font-size: var(--text-font-size);
+  line-height: 23.4px;
+}
+
+section:first-of-type .section__header{
+  margin-block-start: calc(var(--header-section-top-margin) - 10px);
+}
+
+.section__article {
+  margin-block: 20px;
+}
+
+.section__article-header {
+  margin-block-end: 10px;
+}
+
+.section__article-paragraph {
+  color: var(--section-paragraph-font-color);
+}
+
+.normal-font-weight {font-weight: normal;}
+
+.paragraph-link {
+  text-decoration: none;
+  position: relative;
+}
+
+.paragraph-link:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.15px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  /* через text-decoration андерлайн выделяется у тени тоже(( */
+}
+
+.paragraph-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.gallery-header.title-decor{
+  background-color: var(--accent-color);
+  color: var(--title-font-color);
+}
+
+.gallery-header {
+ margin-block-end: 10px;
+}
+
+.section-gallery:not(.gallery-header){
+  display: grid;
+  grid-template-columns: repeat(1, minmax(355px, 1fr));
+  grid-template-rows: repeat(1, auto);
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.section__picture img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+/* 
+.section-gallery:not(.gallery-header){
+  display: grid;
+  grid-template-columns: repeat(3, minmax(355px, 1fr));
+  grid-template-rows: repeat(3, fit-content);
+  grid-auto-flow: dense;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.section__picture img {
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section__picture:nth-child(1) {
+  grid-column: span 2;
+}
+
+.section__picture:nth-child(2) {
+  grid-row: span 2;
+}
+
+.section__picture:nth-child(3) {
+  grid-row: span 3;
+}
+
+.section__picture:nth-child(5) {
+  grid-column: span 2;
+}
+*/
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 667px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footer .footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+.footer::before{
+  top: 20px;
+  right: 0;
 }

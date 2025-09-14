@@ -9,5 +9,7 @@
   --main-font: "IBM Plex mono";
   --border-style: 1px solid var(--accent-color);
   --header-color: #DB00FF;
-  --header-font-color: #000028;
+  --title-font-color: #000028;
+  --header-section-top-margin: 50px;
+  --section-paragraph-font-color: #F1B2CE;
 }
