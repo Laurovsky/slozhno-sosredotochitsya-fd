@@ -7,10 +7,11 @@
   --accent-color: #ff0070;
   --text-font-size: 18px;
   --main-font: "IBM Plex mono";
-  --border-style: 1px solid var(--accent-color);
+  --border-style: 1px solid var(--title-accent-color);
   --header-color: #DB00FF;
   --title-font-color: #000028;
+  --title-accent-color: #ff0070;
   --header-section-top-margin: 50px;
   --section-paragraph-font-color: #F1B2CE;
-  --l-size-page-padding: 20px;
+  --title-decoration-display: block;
 }

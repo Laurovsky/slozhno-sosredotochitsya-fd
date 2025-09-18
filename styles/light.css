@@ -13,5 +13,7 @@
   --accent-color: #ff8dcb;
   --header-color: #FFC2E6;
   --title-font-color: #353430;
+  --title-accent-color: #353430;
   --section-paragraph-font-color: #353430;
+  --title-decoration-display: none;
 }
