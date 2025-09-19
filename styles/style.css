@@ -23,12 +23,35 @@
 
 .header__theme-menu {
   justify-self: end;
-  margin-block-start: 65px;
+  margin-block-start: 57px;
 }
 
 .header__theme-menu-list {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 1.5px 13px;
+  box-shadow: none;
+  color: rgb(var(--button-color-rgb));
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid rgb(var(--button-color-rgb));
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(var(--button-color-rgb), 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid rgb(var(--button-color-rgb));
+  outline: none;
 }
 
 .header::before,
@@ -60,12 +83,12 @@
 
 .header__top-decoration {
   position: absolute;
-  right: 27px;
   top: 4px;
+  right: 27px;
+  display: var(--title-decoration-display);
   justify-self: end;
   color: var(--accent-color);
   line-height: 25px;
-  display: var(--title-decoration-display);
 }
 
 .header__top-decoration::after {
@@ -107,6 +130,7 @@
 .section__header {
   margin-block-start: var(--header-section-top-margin);
   color: var(--title-accent-color);
+  font-weight: bold;
   font-size: var(--text-font-size);
   line-height: 23.4px;
   background-color: inherit;
@@ -126,19 +150,17 @@ section:first-of-type .section__header {
 
 .section__article-header {
   margin-block-start: 20px;
-  margin-block-end: 8px;
+  margin-block-end: 10px;
   font-size: var(--text-font-size);
-  /* min-inline-size: 355px;
-  max-inline-size: 649px; */
 }
 
 .section__article-paragraph {
   color: var(--section-paragraph-font-color);
+  line-height: 23.4px;
 }
 
 .normal-font-weight {
   font-weight: normal;
-  margin-block-end: 9px;
 }
 
 .paragraph-link {
@@ -168,7 +190,6 @@ section:first-of-type .section__header {
 
 .gallery-header {
   margin-block-end: 10px;
-
 }
 
 .section-gallery {
@@ -193,9 +214,9 @@ section:first-of-type .section__header {
   display: grid;
   justify-content: center;
   align-content: center;
+  margin-block-start: 40px;
   block-size: 100vh;
   min-block-size: 667px;
-  margin-block-start: 40px;
 }
 
 .footer .footer__title {
@@ -223,38 +244,43 @@ section:first-of-type .section__header {
     position: relative;
   }
 
-  .header::before {
-    right: 20px;
-    top: 19px;
+  .header__theme-menu {
+    margin-inline-end: 20px;
+    margin-block-start: 190px;
   }
-  
+
+  .header::before {
+    top: 19px;
+    right: 20px;
+  }
+
   .header::after {
     bottom: 20px;
     left: 20px;
   }
 
   .header__top-decoration {
-    right: 35px;
     top: 20px;
+    right: 35px;
     padding-inline-end: 1px;
   }
 
   .header__top-decoration::after {
-    font-size: 10px;
     box-shadow: 0px 0px 6px 1px var(--accent-color);
+    font-size: 10px;
   }
-  
+
   .header__title {
     align-self: center;
   }
 
   .header__paragraph {
+    justify-self: end;
+    align-self: start;
+    margin-inline-end: 21px;
+    margin-block-start: 43px;
     max-block-size: 117px;
     max-inline-size: 364px;
-    margin-block-start: 43px;
-    margin-inline-end: 21px;
-    align-self: start;
-    justify-self: end;
   }
 
   .main {
@@ -264,15 +290,14 @@ section:first-of-type .section__header {
     row-gap: 80px;
   }
 
-
   .main:first-of-type .section:first-child {
     margin-block-start: 60px;
   }
-  
-  .section:first-of-type .section__header:first-child{
+
+  .section:first-of-type .section__header:first-child {
     margin-block-start: 19px;
   }
-  
+
   .section__header {
     margin-block-start: 0;
     min-inline-size: 236px;
@@ -287,6 +312,10 @@ section:first-of-type .section__header {
     grid-template-columns: 1fr minmax(472px, 649px);
     grid-template-rows: auto;
     column-gap: 20px;
+  }
+
+  .section:nth-child(even) .section__header:not(.gallery-header) {
+    max-inline-size: 236px;
   }
 
   .section:nth-child(odd) .section__header {
@@ -306,12 +335,12 @@ section:first-of-type .section__header {
   .section:nth-child(odd) .section__article {
     grid-column: 2;
     grid-row: span 3;
-    margin-block-start: 1px;
   }
 
   .section:nth-child(even) {
     display: grid;
     grid-template-columns: minmax(728px, 1004px);
+    justify-content: center;
   }
 
   .section:nth-child(even) .section__header,
@@ -321,17 +350,17 @@ section:first-of-type .section__header {
   }
 
   .gallery-header {
-    inline-size: 100%;
     margin-block-end: 20px;
+    inline-size: 100%;
   }
 
   .section-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr) 2fr;
+    grid-auto-flow: dense;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    grid-auto-flow: dense;
     box-sizing: border-box;
     max-block-size: 780px;
   }
@@ -359,7 +388,7 @@ section:first-of-type .section__header {
     block-size: 100%;
     max-block-size: 100%;
   }
-  
+
   .footer::before {
     top: 19px;
   }
@@ -375,23 +404,22 @@ section:first-of-type .section__header {
 }
 
 @media (width >= 1024px) {
-  
-  .header__theme-menu{
+  .header__theme-menu {
     justify-self: center;
-    margin-block-start: 20px;
+    margin-block-start: 19px;
+    margin-inline-end: 0px;
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
   }
 
   .header__paragraph {
-    max-inline-size: 491px;
-    margin-block-start: 52px;
     margin-inline-end: 19px;
+    margin-block-start: 52px;
+    max-inline-size: 491px;
   }
-  
+
   .header .header__title {
     font-size: 157px;
   }
@@ -405,7 +433,7 @@ section:first-of-type .section__header {
     min-inline-size: 315px;
   }
 
-  .section__article-header{
+  .section__article-header {
     inline-size: 100%;
   }
 
@@ -413,9 +441,10 @@ section:first-of-type .section__header {
     display: grid;
     grid-template-columns: repeat(3, 315px);
     grid-template-rows: min-content 1fr;
+    justify-content: center;
     column-gap: 20px;
   }
-  
+
   .section:nth-child(even) .section__header {
     grid-area: 1 / 1 / 2 / 2;
   }
@@ -428,12 +457,12 @@ section:first-of-type .section__header {
   .section:nth-child(even) .section__article:nth-child(4) {
     grid-area: 2 / 3 / 3 / 4;
   }
-  
+
   .footer {
     margin-block-start: 325px;
   }
 
-  .footer .footer__title{
+  .footer .footer__title {
     font-size: 157px;
   }
 }

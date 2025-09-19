@@ -12,6 +12,8 @@
   --title-font-color: #000028;
   --title-accent-color: #ff0070;
   --header-section-top-margin: 50px;
-  --section-paragraph-font-color: #F1B2CE;
+  --section-paragraph-font-color: #f1b2ce;
+  --button-color-rgb: 255, 0, 112;
   --title-decoration-display: block;
 }
+
