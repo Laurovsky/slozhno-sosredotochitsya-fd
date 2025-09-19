@@ -1,8 +1,8 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 10px;
-  font-size: var(--text-font-size);
+  margin: 16px auto 0 auto;
+  padding-inline: 10px;
   font-size: var(--text-font-size);
   background-color: #000028;
   background-image: var(--cover-image);
@@ -29,7 +29,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 9px;
 }
 
 .header__theme-menu-button {
@@ -60,7 +60,7 @@
 .footer::after {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 10px;
   width: 25px;
   height: 25px;
 }
@@ -83,7 +83,7 @@
 
 .header__top-decoration {
   position: absolute;
-  top: 4px;
+  top: 10px;
   right: 27px;
   display: var(--title-decoration-display);
   justify-self: end;
@@ -324,7 +324,6 @@ section:first-of-type .section__header {
     margin-block-start: 2px;
   }
   .section .section__header:nth-child(2) {
-    display: grid;
     grid-column: 2;
     grid-row: 1;
     justify-self: start;
