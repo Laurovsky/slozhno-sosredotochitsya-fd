@@ -2,10 +2,8 @@
 
 .page {
   margin: 0 auto;
-  /* padding-inline: 10px; */
-  /* padding-block: 10px; */
   font-size: var(--text-font-size);
-  background-color: #000028;
+  background-color: var(--cover-color);
   background-image: var(--cover-image);
   background-position: center;
   background-size: cover;
@@ -19,7 +17,7 @@
 .page .footer {
   padding-inline: 10px;
   padding-block: 10px;
-  }
+}
 
 .header {
   display: grid;
@@ -108,10 +106,6 @@
   box-shadow: 0px 0px 9px 2px var(--accent-color);
   font-size: 9px;
   background-color: var(--accent-color);
-}
-
-.header__title h1{
-  /* padding-block-end: 100px; */
 }
 
 .header .header__title,
@@ -211,7 +205,7 @@ section:first-of-type .section__header {
   grid-template-rows: auto;
   gap: 10px;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .section__picture img {
@@ -234,7 +228,6 @@ section:first-of-type .section__header {
 
 .footer .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
-  margin-block-start: 10px;
 }
 .footer::before {
   top: 10px;
@@ -248,7 +241,7 @@ section:first-of-type .section__header {
 
 @media (width >= 768px) {
   .page .main,
-  .page .footer{
+  .page .footer {
     padding-inline-start: 20px;
     padding-inline-end: 20px;
   }
@@ -378,10 +371,6 @@ section:first-of-type .section__header {
     box-sizing: border-box;
     margin-bottom: 40px;
   }
-  
-  .section-gallery-wrapper {
-    /* block-size: 768px; */
-  }
 
   .section__picture:nth-child(1) {
     grid-area: 1 / 1 / 2 / 3;
@@ -400,10 +389,10 @@ section:first-of-type .section__header {
   }
 
   .section__picture img {
-    object-fit: cover;
-    object-position: center;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .footer::before {
@@ -413,14 +402,12 @@ section:first-of-type .section__header {
 
   .footer {
     margin-block-start: 5px;
-    /* min-block-size: 1024px; */
   }
 
   .footer::after {
     bottom: 20px;
     left: 20px;
   }
-
 }
 
 @media (width >= 1024px) {
@@ -455,7 +442,7 @@ section:first-of-type .section__header {
   .section__article-header {
     inline-size: 100%;
   }
-  
+
   .section-gallery {
     grid-template-rows: 260px 315px 433px;
   }
@@ -479,14 +466,6 @@ section:first-of-type .section__header {
   }
   .section:nth-child(even) .section__article:nth-child(4) {
     grid-area: 2 / 3 / 3 / 4;
-  }
-  
-  .section-gallery-wrapper {
-    /* block-size: 1048px; */
-  }
-
-  .footer {
-    /* min-block-size: 768px; */
   }
 
   .footer .footer__title {

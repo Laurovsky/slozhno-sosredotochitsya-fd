@@ -10,6 +10,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --cover-image: url(../images/cover-image-light.png);
+  --cover-color: #ffeef6;
   --accent-color: #ff8dcb;
   --header-color: #ffc2e6;
   --title-font-color: #353430;
@@ -22,6 +23,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --cover-image: url(../images/cover-image-light.png);
+    --cover-color: #ffeef6;
     --accent-color: #ff8dcb;
     --header-color: #ffc2e6;
     --title-font-color: #353430;
