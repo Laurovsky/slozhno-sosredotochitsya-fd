@@ -7,7 +7,7 @@
   --cover-color: #000028;
   --accent-color: #ff0070;
   --text-font-size: 18px;
-  --main-font: "IBM Plex mono";
+  --main-font: "IBM Plex mono", Arial, sans-serif;
   --border-style: 1px solid var(--title-accent-color);
   --header-color: #DB00FF;
   --title-font-color: #000028;
