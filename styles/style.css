@@ -368,8 +368,8 @@
   }
 
   .header__paragraph {
-    max-inline-size: 491px;
     margin-block-start: 51px;
+    max-inline-size: 491px;
   }
 
   .header .header__title {
@@ -399,7 +399,7 @@
     column-gap: 20px;
   }
 
-  .section-even .section__header  {
+  .section-even .section__header {
     grid-area: 1 / 1 / 2 / 4;
   }
 
