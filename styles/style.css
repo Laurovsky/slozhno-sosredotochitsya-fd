@@ -269,7 +269,6 @@
     align-self: start;
     margin-inline-end: 20px;
     margin-block-start: 42px;
-    max-block-size: 117px;
     max-inline-size: 364px;
   }
 
@@ -391,9 +390,10 @@
   .section-gallery {
     grid-template-rows: 260px 315px 433px;
   }
-
+  
+  /* вроде пофиксил */
   .section-column {
-    grid-template-columns: repeat(auto-fit, 315px);
+    grid-template-columns: repeat(3, 315px);
     grid-auto-rows: min-content;
     justify-content: space-between;
     column-gap: 20px;
