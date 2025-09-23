@@ -394,7 +394,7 @@
   .section-gallery {
     grid-template-rows: 260px 315px 433px;
   }
-  
+
   .section-what {
     grid-template-columns: repeat(3, 315px);
     grid-auto-rows: min-content;
