@@ -287,23 +287,28 @@
     margin-block-start: 0;
   }
 
-  .section-even .section__header {
-    max-inline-size: 236px;
-  }
-
-  .section-odd {
+  .section-why,
+  .section-how {
     grid-template-columns: 1fr minmax(472px, 649px);
     grid-template-rows: auto;
     column-gap: 20px;
   }
 
-  .section-odd .section__header {
+  .section-why .section__header,
+  .section-how .section__header {
     grid-column: 1;
     grid-row: 2 span;
     min-inline-size: 236px;
   }
 
-  .section-odd .article-title {
+  .section-why .section__article,
+  .section-how .section__article {
+    grid-column: 2;
+    grid-row: span 3;
+  }
+
+  .section-why .article-title,
+  .section-how .article-title {
     grid-column: 2;
     grid-row: 1;
     justify-self: start;
@@ -313,14 +318,13 @@
     inline-size: 100%;
   }
 
-  .section-odd .section__article {
-    grid-column: 2;
-    grid-row: span 3;
-  }
-
-  .section-even {
+  .section-what {
     grid-template-columns: minmax(728px, 1004px);
     justify-content: center;
+  }
+
+  .section-what .section__header {
+    max-inline-size: 236px;
   }
 
   .gallery-header {
@@ -391,15 +395,14 @@
     grid-template-rows: 260px 315px 433px;
   }
   
-  /* вроде пофиксил */
-  .section-column {
+  .section-what {
     grid-template-columns: repeat(3, 315px);
     grid-auto-rows: min-content;
     justify-content: space-between;
     column-gap: 20px;
   }
 
-  .section-even .section__header {
+  .section-what .section__header {
     grid-area: 1 / 1 / 2 / 4;
   }
 
